@@ -4,7 +4,7 @@
 image:
   repository: registry.home.glroland.com/ai/docling-rapidocr-pipeline
   repository2: quay.io/redhat-ai-americas/docling-rapidocr-pipeline
-  tag: "5"
+  tag: "6"
   tag2: "1.3"
   pullPolicy: IfNotPresent
 
