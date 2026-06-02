@@ -10,6 +10,12 @@ ENV OMP_NUM_THREADS=4 \
 
 ENV DOCLING_SERVE_ENABLE_UI=true
 ENV DOCLING_SERVE_MAX_SYNC_WAIT=900
+ENV UVICORN_WORKERS=4
+ENV DOCLING_SERVE_ENG_LOC_NUM_WORKERS=4
+ENV DOCLING_SERVE_ENABLE_MANAGEMENT_ENDPOINTS=true
+ENV DOCLING_LOAD_MODELS_AT_BOOT=true
+ENV DOCLING_DEVICE=auto
+# ENV DOCLING_CUDA_USE_FLASH_ATTENTION2=true
 
 ARG MODELS_LIST="layout tableformer rapidocr code_formula picture_classifier smolvlm"
 
@@ -28,4 +34,4 @@ EXPOSE 8080
 
 # Run the server
 # The command 'docling-serve run' will respect the ENV variables above
-ENTRYPOINT ["docling-serve", "run", "--host", "0.0.0.0", "--port", "8080", "--timeout-keep-alive", "900"]
+ENTRYPOINT ["docling-serve", "run", "--host", "0.0.0.0", "--port", "8080", "--timeout-keep-alive", "900", "-v"]
